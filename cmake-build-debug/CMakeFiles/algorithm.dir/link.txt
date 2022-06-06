@@ -1,0 +1,3 @@
+"D:\program\CLion_70121\app\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\algorithm.dir/objects.a
+D:\program\mingw64\bin\ar.exe cr CMakeFiles\algorithm.dir/objects.a @CMakeFiles\algorithm.dir\objects1.rsp
+D:\program\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\algorithm.dir/objects.a -Wl,--no-whole-archive  -o algorithm.exe -Wl,--out-implib,libalgorithm.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\algorithm.dir\linklibs.rsp
