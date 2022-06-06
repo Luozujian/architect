@@ -122,32 +122,32 @@ algorithm/fast:
 	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/build
 .PHONY : algorithm/fast
 
-CompetitionTemplate/hello.obj: CompetitionTemplate/hello.cpp.obj
+CompetitionTemplate/stringTemplate.obj: CompetitionTemplate/stringTemplate.cpp.obj
 
-.PHONY : CompetitionTemplate/hello.obj
+.PHONY : CompetitionTemplate/stringTemplate.obj
 
 # target to build an object file
-CompetitionTemplate/hello.cpp.obj:
-	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/hello.cpp.obj
-.PHONY : CompetitionTemplate/hello.cpp.obj
+CompetitionTemplate/stringTemplate.cpp.obj:
+	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/stringTemplate.cpp.obj
+.PHONY : CompetitionTemplate/stringTemplate.cpp.obj
 
-CompetitionTemplate/hello.i: CompetitionTemplate/hello.cpp.i
+CompetitionTemplate/stringTemplate.i: CompetitionTemplate/stringTemplate.cpp.i
 
-.PHONY : CompetitionTemplate/hello.i
+.PHONY : CompetitionTemplate/stringTemplate.i
 
 # target to preprocess a source file
-CompetitionTemplate/hello.cpp.i:
-	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/hello.cpp.i
-.PHONY : CompetitionTemplate/hello.cpp.i
+CompetitionTemplate/stringTemplate.cpp.i:
+	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/stringTemplate.cpp.i
+.PHONY : CompetitionTemplate/stringTemplate.cpp.i
 
-CompetitionTemplate/hello.s: CompetitionTemplate/hello.cpp.s
+CompetitionTemplate/stringTemplate.s: CompetitionTemplate/stringTemplate.cpp.s
 
-.PHONY : CompetitionTemplate/hello.s
+.PHONY : CompetitionTemplate/stringTemplate.s
 
 # target to generate assembly for a file
-CompetitionTemplate/hello.cpp.s:
-	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/hello.cpp.s
-.PHONY : CompetitionTemplate/hello.cpp.s
+CompetitionTemplate/stringTemplate.cpp.s:
+	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/stringTemplate.cpp.s
+.PHONY : CompetitionTemplate/stringTemplate.cpp.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... algorithm
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... CompetitionTemplate/hello.obj
-	@echo ... CompetitionTemplate/hello.i
-	@echo ... CompetitionTemplate/hello.s
+	@echo ... CompetitionTemplate/stringTemplate.obj
+	@echo ... CompetitionTemplate/stringTemplate.i
+	@echo ... CompetitionTemplate/stringTemplate.s
 .PHONY : help
 
 

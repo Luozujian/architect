@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-D:/architect/CompetitionTemplate/hello.cpp
+D:/architect/CompetitionTemplate/stringTemplate.cpp
 cstdio
+-
+string
+-
+cstring
+-
+algorithm
+-
+iostream
 -
 
