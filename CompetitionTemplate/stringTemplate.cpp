@@ -6,6 +6,8 @@
 #include <cstring>
 #include <algorithm>
 #include <iostream>
+#include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -165,6 +167,61 @@ void test10() {
 };
 
 
+
+// string转char 数组，char转string
+void test11() {
+    string s1 = "hello";
+    char s2[s1.length()];
+    // o(n)的时间复杂度
+    strcpy(s2,s1.c_str());
+    printf("%s %d\n", s2, strlen(s2));
+
+    string s3(s2);
+    printf("%s\n", s3.c_str());
+}
+
+
+//double 转stringl类型
+void test12() {
+    double d = 3.1415;
+    stringstream ss;
+    ss << setprecision(2) << d;
+    string s = ss.str();
+    printf("%s\n", s.c_str());
+
+
+    char s1[20];
+    sprintf(s1, "%.1f", d);
+    printf("%s\n", s1);
+
+    //内存也会回复成0
+    ss.str("");
+
+    //不保留精度
+    string s4 = to_string(d);
+
+
+    // stringstream sss;
+    int d1 = 12312312;
+    ss << d1;
+    cout << ss.str() << endl;
+}
+
+//string转其他类型
+void test13() {
+    string s = "31415231111";
+    //cout << stoi(s) << endl;
+
+    //string to double
+    cout << stod(s) << endl;
+
+    // string to long long
+    cout << stoll(s) << endl;
+}
+
+
+
+
 int main() {
     // test1();
     // test5();
@@ -172,6 +229,9 @@ int main() {
     // test7();
     // test8();
     // test9();
-    test10();
+    // test10();
+    // test11();
+    // test12();
+    test13();
     return 0;
 }
