@@ -220,6 +220,17 @@ void test13() {
 }
 
 
+bool cmp(char a, int b) {
+    return b <= a;
+}
+
+// 对字符串排序
+void test14 () {
+    string s1 = "asfsadfsdfgsadfg";
+    sort(s1.begin(), s1.end(), cmp);
+    printf("%s\n", s1.c_str());
+}
+
 
 
 int main() {
@@ -232,6 +243,7 @@ int main() {
     // test10();
     // test11();
     // test12();
-    test13();
+    // test13();
+    test14();
     return 0;
 }

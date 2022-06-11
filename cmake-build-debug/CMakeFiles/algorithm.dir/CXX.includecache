@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/architect/CompetitionTemplate/stringTemplate.cpp
+D:/architect/CompetitionTemplate/queueTemplate.cpp
 cstdio
 -
 string
@@ -20,5 +20,13 @@ iostream
 sstream
 -
 iomanip
+-
+list
+-
+set
+-
+queue
+-
+deque
 -
 

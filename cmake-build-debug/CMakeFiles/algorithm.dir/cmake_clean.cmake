@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithm.dir/CompetitionTemplate/stringTemplate.cpp.obj"
+  "CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.obj"
   "algorithm.exe"
   "algorithm.exe.manifest"
   "algorithm.pdb"

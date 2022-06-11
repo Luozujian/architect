@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/architect/CompetitionTemplate/stringTemplate.cpp" "D:/architect/cmake-build-debug/CMakeFiles/algorithm.dir/CompetitionTemplate/stringTemplate.cpp.obj"
+  "D:/architect/CompetitionTemplate/queueTemplate.cpp" "D:/architect/cmake-build-debug/CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
