@@ -56,27 +56,27 @@ include CMakeFiles/algorithm.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/algorithm.dir/flags.make
 
-CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.obj: CMakeFiles/algorithm.dir/flags.make
-CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.obj: ../CompetitionTemplate/queueTemplate.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\architect\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.obj"
-	D:\program\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\algorithm.dir\CompetitionTemplate\queueTemplate.cpp.obj -c D:\architect\CompetitionTemplate\queueTemplate.cpp
+CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.obj: CMakeFiles/algorithm.dir/flags.make
+CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.obj: ../CompetitionTemplate/setTemplate.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\architect\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.obj"
+	D:\program\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\algorithm.dir\CompetitionTemplate\setTemplate.cpp.obj -c D:\architect\CompetitionTemplate\setTemplate.cpp
 
-CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.i"
-	D:\program\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\architect\CompetitionTemplate\queueTemplate.cpp > CMakeFiles\algorithm.dir\CompetitionTemplate\queueTemplate.cpp.i
+CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.i"
+	D:\program\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\architect\CompetitionTemplate\setTemplate.cpp > CMakeFiles\algorithm.dir\CompetitionTemplate\setTemplate.cpp.i
 
-CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.s"
-	D:\program\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\architect\CompetitionTemplate\queueTemplate.cpp -o CMakeFiles\algorithm.dir\CompetitionTemplate\queueTemplate.cpp.s
+CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.s"
+	D:\program\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\architect\CompetitionTemplate\setTemplate.cpp -o CMakeFiles\algorithm.dir\CompetitionTemplate\setTemplate.cpp.s
 
 # Object files for target algorithm
 algorithm_OBJECTS = \
-"CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.obj"
+"CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.obj"
 
 # External object files for target algorithm
 algorithm_EXTERNAL_OBJECTS =
 
-algorithm.exe: CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.obj
+algorithm.exe: CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.obj
 algorithm.exe: CMakeFiles/algorithm.dir/build.make
 algorithm.exe: CMakeFiles/algorithm.dir/linklibs.rsp
 algorithm.exe: CMakeFiles/algorithm.dir/objects1.rsp

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/architect/CompetitionTemplate/queueTemplate.cpp
+D:/architect/CompetitionTemplate/setTemplate.cpp
 cstdio
 -
 string
@@ -24,9 +24,5 @@ iomanip
 list
 -
 set
--
-queue
--
-deque
 -
 

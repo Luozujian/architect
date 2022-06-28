@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/architect/CompetitionTemplate/queueTemplate.cpp">
+		<Unit filename="D:/architect/CompetitionTemplate/setTemplate.cpp">
 			<Option target="algorithm"/>
 		</Unit>
 		<Unit filename="D:/architect/CMakeLists.txt">

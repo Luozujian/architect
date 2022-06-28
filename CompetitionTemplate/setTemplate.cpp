@@ -52,7 +52,7 @@ void test2() {
     s.insert(Obj{1});
     s.insert(Obj{2});
     s.insert(Obj{2});
-    int result = s.erase(Obj{1});
+    int result = s.erase(Obj{3});
     printf("%d\n", result);
 }
 
@@ -64,7 +64,7 @@ void test3() {
     s.insert(Obj{1});
     s.insert(Obj{2});
     s.insert(Obj{2});
-    if (s.find(Obj{1}) != s.end()) {
+    if (s.find(Obj{3}) != s.end()) {
         printf("lala");
     }
 }
@@ -124,11 +124,11 @@ void test7() {
 
 int main() {
 //    test1();
-//    test2();
+    test2();
 //    test3();
 //    test4();
 //    test5();
-    test6();
+//    test6();
 }
 
 

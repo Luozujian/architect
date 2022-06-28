@@ -12,8 +12,6 @@
 using namespace std;
 
 
-
-
 //vector的复制 o(n)的时间复杂度
 void test1() {
     vector<int> vec{1,2,3};
@@ -66,8 +64,9 @@ void test6() {
 void test7() {
     vector<int> a{1, 2, 3};
     auto it1 = a.begin();  // 返回一个迭代器类型，一般来说我们并不关心迭代器具体的数据类型
-    auto it2 = a.insert(it1, {3,3});
-    while(it1 != a.end()) {
+    auto it2 = a.insert(it1 + 1, {3,3});
+    it2 = a.begin();
+    while(it2 != a.end()) {
         cout << *it2 << endl;
         it2++;
     }
@@ -95,16 +94,17 @@ void test10 () {
     vector<int> a{1, 2, 3};
     reverse(a.begin(),a.end());
     printf("%d\n", a[0]);
-};
+}
 
 //求vector最大值
 void  test11() {
     vector<int> a{1, 2, 3};
+    int b[5] = {3,2,1,4,5};
     auto iter = max_element(a.begin(),a.end());
     cout << *iter << endl;
-
+    int index = max_element(b, b + 5) - b;
     iter = min_element(a.begin(),a.end());
-    cout << *iter << endl;
+    cout << *iter << " " << index << endl;
 }
 
 
@@ -130,6 +130,12 @@ void test12() {
 
 
 
+// unique去重
+void test13() {
+    vector<int> a{1, 2, 3, 8, 8, 8};
+    int iter = unique(a.begin(),a.end()) - a.begin();
+    cout << iter << endl;
+}
 
 
 
@@ -143,5 +149,6 @@ int main() {
 //    test9();
 //    test10();
 //    test11();
-    test12();
+//    test12();
+    test13();
 }

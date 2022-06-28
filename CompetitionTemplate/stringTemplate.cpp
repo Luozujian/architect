@@ -62,7 +62,6 @@ void test6() {
     //o(n)的时间复杂度，可能不需要创建新对象
     s1.append(s2);
     printf("%s\n", s1.c_str());
-
     // 往末尾添加已给字符，比字符串拼接会稍微快一点点
     s1.push_back('s');
 }
@@ -220,6 +219,8 @@ void test13() {
 }
 
 
+
+
 bool cmp(char a, int b) {
     return b <= a;
 }
@@ -231,6 +232,11 @@ void test14 () {
     printf("%s\n", s1.c_str());
 }
 
+
+void test15() {
+    string s1 = "asfsadfsdfgsadfg";
+    lower_bound(s1.begin(),s1.end(),'a');
+}
 
 
 int main() {

@@ -122,32 +122,32 @@ algorithm/fast:
 	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/build
 .PHONY : algorithm/fast
 
-CompetitionTemplate/queueTemplate.obj: CompetitionTemplate/queueTemplate.cpp.obj
+CompetitionTemplate/setTemplate.obj: CompetitionTemplate/setTemplate.cpp.obj
 
-.PHONY : CompetitionTemplate/queueTemplate.obj
+.PHONY : CompetitionTemplate/setTemplate.obj
 
 # target to build an object file
-CompetitionTemplate/queueTemplate.cpp.obj:
-	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.obj
-.PHONY : CompetitionTemplate/queueTemplate.cpp.obj
+CompetitionTemplate/setTemplate.cpp.obj:
+	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.obj
+.PHONY : CompetitionTemplate/setTemplate.cpp.obj
 
-CompetitionTemplate/queueTemplate.i: CompetitionTemplate/queueTemplate.cpp.i
+CompetitionTemplate/setTemplate.i: CompetitionTemplate/setTemplate.cpp.i
 
-.PHONY : CompetitionTemplate/queueTemplate.i
+.PHONY : CompetitionTemplate/setTemplate.i
 
 # target to preprocess a source file
-CompetitionTemplate/queueTemplate.cpp.i:
-	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.i
-.PHONY : CompetitionTemplate/queueTemplate.cpp.i
+CompetitionTemplate/setTemplate.cpp.i:
+	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.i
+.PHONY : CompetitionTemplate/setTemplate.cpp.i
 
-CompetitionTemplate/queueTemplate.s: CompetitionTemplate/queueTemplate.cpp.s
+CompetitionTemplate/setTemplate.s: CompetitionTemplate/setTemplate.cpp.s
 
-.PHONY : CompetitionTemplate/queueTemplate.s
+.PHONY : CompetitionTemplate/setTemplate.s
 
 # target to generate assembly for a file
-CompetitionTemplate/queueTemplate.cpp.s:
-	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/queueTemplate.cpp.s
-.PHONY : CompetitionTemplate/queueTemplate.cpp.s
+CompetitionTemplate/setTemplate.cpp.s:
+	$(MAKE) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/CompetitionTemplate/setTemplate.cpp.s
+.PHONY : CompetitionTemplate/setTemplate.cpp.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... algorithm
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... CompetitionTemplate/queueTemplate.obj
-	@echo ... CompetitionTemplate/queueTemplate.i
-	@echo ... CompetitionTemplate/queueTemplate.s
+	@echo ... CompetitionTemplate/setTemplate.obj
+	@echo ... CompetitionTemplate/setTemplate.i
+	@echo ... CompetitionTemplate/setTemplate.s
 .PHONY : help
 
 
