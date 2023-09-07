@@ -1,4 +1,0 @@
-"D:\program\CLion_70121\app\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\architect
--- Configuring done
--- Generating done
--- Build files have been written to: D:/architect/cmake-build-debug
