@@ -131,6 +131,8 @@ makemap(): 分配内存，指定hash种子，初始化桶，以及分配预留�
 
 //todo 可捕获异常，不可捕获异常
 //todo unsafe point
+//todo 真实IP的获取
+//interface类型的实现
 
 
 参考资料:
