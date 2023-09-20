@@ -137,7 +137,7 @@ makemap(): 分配内存，指定hash种子，初始化桶，以及分配预留�
 
 #### 参考资料:
 
-1. [ ] [map底层原理](https://zhuanlan.zhihu.com/p/495998623)
-2. [ ] [map底层原理 mapextra](https://cloud.tencent.com/developer/article/1746966)
-3. [ ] [1.为什么map不支持并发安全]([https://learnku.com/articles/67151](https://juejin.cn/s/golang%20map%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B9%B6%E5%8F%91%E4%B8%8D%E5%AE%89%E5%85%A8)https://juejin.cn/s/golang%20map%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B9%B6%E5%8F%91%E4%B8%8D%E5%AE%89%E5%85%A8)
-4. [ ] [2.map的实现原理](https://zhuanlan.zhihu.com/p/495998623)
+1. [ ] [1.map底层原理](https://zhuanlan.zhihu.com/p/495998623)
+2. [ ] [2.map底层原理 mapextra](https://cloud.tencent.com/developer/article/1746966)
+3. [ ] [3.为什么map不支持并发安全](https://learnku.com/articles/67151)
+4. [ ] [4.map的实现原理](https://zhuanlan.zhihu.com/p/495998623)
