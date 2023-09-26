@@ -63,7 +63,34 @@ Waiter: 它表示阻塞等待锁的协程个数，协程解锁时根据此值来
 
 #### 1.7 Lock的大概逻辑？(2_2023_09_22)
 1. 首先进行一次CAS，看是否可以获取到锁
-2. 
+2. 进入slowLock()
+3. 首先判断是否可以自旋，等待锁释放，同时修改锁状态为mutexWoken => 释放锁的时候不要唤醒阻塞的协程
+4. 如果不满足自旋条件 1.加锁成功 2.加入阻塞队列
+5. 唤醒之后 => 1.是否要取消饥饿模式 2.继续竞争锁
+```c++
+if old&(mutexLocked|mutexStarving) == mutexLocked && runtime_canSpin(iter) {
+	// Active spinning makes sense.
+	// Try to set mutexWoken flag to inform Unlock
+	// to not wake other blocked goroutines.
+	if !awoke && old&mutexWoken == 0 && old>>mutexWaiterShift != 0 &&
+		atomic.CompareAndSwapInt32(&m.state, old, old|mutexWoken) {
+		awoke = true
+	}
+	runtime_doSpin()
+	iter++
+	old = m.state
+	continue
+}
+```
+
+#### 1.8 unlock的大概逻辑？(2_2023_09_22)
+1. 直接将锁lock标志位清零
+2. 然后判断是否是饥饿模式
+3. 饥饿模式 => 释放信号量，唤醒队首Goroutine
+4. 非饥饿模型 => 如果mutexWoken标识为0，并且有阻塞的元素的话，就唤醒一个G
+
+
+
 
 
 #### 参考资料：
