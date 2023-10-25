@@ -111,7 +111,7 @@ Wait() => 如果正在执行的线程等于0
 #### 15. 什么是sync.Pool? (4_2023_10_25)
 sync.Pool用于存储临时对象，避免频繁的创建和销毁对象，带来较大的GC压力
 
-#### 16. sync.Pool结构体的主要字段？ (2_2023_10_07)
+#### 16. sync.Pool结构体的主要字段？ (3_2023_10_25)
 ```c++
 type Pool struct {
 	noCopy noCopy
@@ -138,7 +138,7 @@ new: 创建新对象的函数
 
 
 
-#### 17. 本地对象池结构的主要字段？ (2_2023_10_07)
+#### 17. 本地对象池结构的主要字段？ (3_2023_10_25)
 ```c++
 type poolLocal struct {
 	poolLocalInternal
@@ -151,7 +151,7 @@ type poolLocalInternal struct {
         shared  poolChain
 ```
 
-#### 18. poolChain结构体的主要字段？(2_2023_10_07)
+#### 18. poolChain结构体的主要字段？(3_2023_10_25)
 ```c++
 type poolChain struct {
 	head *poolChainElt
@@ -159,7 +159,7 @@ type poolChain struct {
 }
 ```
 
-#### 19. pollChainElt结构体的主要字段？(2_2023_10_07)
+#### 19. pollChainElt结构体的主要字段？(3_2023_10_25)
 ```c++
 type poolChainElt struct {
 	poolDequeue
@@ -175,30 +175,40 @@ type poolDequeue struct {
 
 
 
-#### 18. put() 方法的大概逻辑？  (2_2023_10_18)
+#### 18. put() 方法的大概逻辑？  (3_2023_10_25)
 1. 执行pool.pin方法
 2. 如果l.private 为空的话，则直接放入到private
 3. 否则放入到poolChain里面去
 
 
-#### 19. pool.pin方法大概逻辑？ (2_2023_10_18)
+#### 19. pool.pin方法大概逻辑？ (3_2023_10_25)
 1. 防止当前P被抢占，golang1.14以后实现了抢占式调度，避免在执行过程中被抢占，然后被唤醒的时候再其他P中执行，这样执行过程会有问题
 2. 如果当前P小于数组的长度，则直接返回当前P对应的poolLocal数组
 3. 否则根据当前P的个数重新初始化
 
-#### 20. poolChain.pushHead的大概逻辑?  (2_2023_10_18)
+#### 20. poolChain.pushHead的大概逻辑?  (3_2023_10_25)
 1. 如果head所指向的节点为null，则创建一个节点，环形数组大小为8，tail也指向该节点
 2. 如果head所指向的节点，环形数组未满，则放入元素，返回成功
 3. 如果满了，则创建一个2倍于上一个节点环形数组大小的数组
 4. 然后将元素放进去
 
-##### 21. poolChain.popHead的大概逻辑？(2_2023_10_18)
+##### 21. poolChain.popHead的大概逻辑？(3_2023_10_25)
 1. 链表从head往tail取数据，环形数组也是从head往tail取数据，用cas来保证安全性
 
-##### 22. poolChain.popTail的大概逻辑？(2_2023_10_18)
+##### 22. poolChain.popTail的大概逻辑？(3_2023_10_25)
 1. 链表从tail往head取数据，环形数组也是从tail往head取数据，用cas来保证安全性
 
-##### 23. 
+##### 23. pushHead和popHead会有并发问题吗？ (2_2023_10_25)
+不会有，只有popTail可能会和其他操作有并发问题，因为只有get方法才有可能从其他P对应的localPool窃取数据
+
+##### 24. popTail和popHead会有并发问题吗？(2_2023_10_25)
+可能会有，但是通过cas修改headTail变量，保证并发安全
+
+##### 25. popTail和pushHead会有并发问题吗？(2_2023_10_25)
+不会有，一个是修改tail变量，一个是修改head变量
+
+##### 26.
+
 
 //TODO
 1. 环形队列判断满和空的方法 ？
