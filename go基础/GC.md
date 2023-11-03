@@ -69,3 +69,4 @@ golang v1.5在栈空间实现插入写屏障。
 参考资料:
 1. [ ] [一文搞懂go gc垃圾回收原理](https://juejin.cn/post/7111515970669117447)
 2. [ ] [详细总结： Golang GC、三色标记、混合写屏障机制 ](https://blog.51cto.com/u_15730090/5510574)
+3. [ ] [Runtime: goroutine的暂停和恢复源码剖析](https://blog.haohtml.com/archives/30519)
