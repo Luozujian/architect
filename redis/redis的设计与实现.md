@@ -112,14 +112,61 @@ map是本地缓存，为本实例提供缓存能力，不同实例数据集合�
 
 
 #### 14. zset常见的操作？(2_2023_11_3)
+支持8种常见操作
+
+|  操作        | 命令   | 例子                                         | 说明                             | 时间复杂度 |
+|  ----       | ----   | ----                                        | ----                            | ----      |
+| zadd        |        |  zadd key score member [score member]       | 添加数据                          | log(n)   |
+| zrange      |        |  zrange key start end [withscores]          | 从小到大，返回排名位于start，end之间的元素     | o(n)   |
+| zrevrange   |        |  zrevrange key start end [withscores]       | 从大到小，返回排名位于start，end之间的元素     | o(n)   |
+| zcard       |        |  zcard key                                  | 返回元素个数     | o(1)   |
+| zrangebyscore        |        |  zrangebyscore key start,end        | 返回分数位于start，end之间的元素     | o(n)   |
+| zrank       |        |  zrank key        | 获取指定元素的排名      | log(n)  |
+| zscore      |        |  zscore key        | 获取指定元素的分数     | o(1)    |
+| zrem      |         |  zrem key member        | 删除指定元素      | log(1)  |
 
 
+#### 15. zset常见实用常见？ (2_2023_11_3)
+排行榜
 
+
+#### 16. GEO支持的常见操作？ (2_2023_11_3)
+|  操作        | 命令   | 例子                                         | 说明                             | 时间复杂度 |
+|  ----       | ----   | ----                                        | ----                            | ----      |
+| getadd      |      |  GEOADD key longitude latitude member [longitude latitude member ...] | 添加数据 |   |
+| geodist     |      |  GEODIST key member1 member2 [m|km|ft|mi]     | 返回两者的距离 |   |
+| geohash     |      |  geohash buildings member [member]     | 返回坐标对应的hash值 |   |
+| geopos      |      |  geopos  buildings member [member]     | 返回building对应的经纬度 |   |
+| georadius    |     |  georadius key longitude latitude radius m|km|ft|mi     | 返回building对应的经纬度 |   |
+| georadiusbymember    |     |  georadiusbymember key member radius m|km|ft|mi     | 和georadius一样，以一个存在的数据为中心 |   |
+| geodel    |     |  geodel key building | 删除一个元素 |   |
+
+
+#### 17. GEO常见的场景？ (2_2023_11_3)
+地理位置相关的操作
+
+
+georadius 支持5个参数:
+1. WITHCOORD:返回经纬度坐标
+2. WITHDIST:返回距离中心点的距离
+3. WITHHASH:返回GeoHash对应的整数值
+4. count: 返回的个数
+5. aes/desc: 由近到远，由远到近返回
+
+
+#### 18. hyperlonglong 常见操作？ (2_2023_11_3)
+|  操作        | 命令   | 例子                                         | 说明                             | 时间复杂度 |
+|  ----       | ----   | ----                                        | ----                            | ----      |
+| pfadd       |        | pfadd key element[element...] | 添加数据 |   |
+| pfcount     |        | pfcount key [key...] | 获取多个Key不同元素的个数 |   |
+| pfmerge     |        | pfmerge dest [source...] | 合并多个source到dest中去 |   |
+| pfselftest  |        | pfselftest [numtests] | 测试估算性能和准确度 |   |
 
 #### 参考资料:
 1. [ ] [Redis---List数据类型操作](https://developer.aliyun.com/article/71365)
 2. [ ] [Redis-哈希(Hash)的相关操作](https://cloud.tencent.com/developer/article/1813851)
-3. [ ] [【Redis】五大常见的数据类型之 Zset](https://developer.aliyun.com/article/1095426)
+3. [ ] [【Redis】五大常见的数据类型之 Zset](https://developer.aliyun.com/article/1053766)
+4. [] [Redis命令介绍之Geo类型（地理空间）操作命令](https://www.ghosind.com/2020/10/20/redis-geo)
 
 
 
