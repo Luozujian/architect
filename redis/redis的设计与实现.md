@@ -162,11 +162,21 @@ georadius 支持5个参数:
 | pfmerge     |        | pfmerge dest [source...] | 合并多个source到dest中去 |   |
 | pfselftest  |        | pfselftest [numtests] | 测试估算性能和准确度 |   |
 
+#### 19. hyperlonglong 的使用场景？ (2_2023_11_3)
+较小的内存，求大量数据不同的个数
+
+#### 20. bitmap支持哪些常用操作？(2_2023_11_3)
+|  操作        | 命令   | 例子                                         | 说明                             | 时间复杂度 |
+|  ----        | ----   | ----                                        | ----                            | ----      |
+| setbit       |        | setbit key offset val                      | 添加数据                          |           |
+| setbit       |        | setbit key offset val                      | 添加数据                          |           |  
+
+
 #### 参考资料:
 1. [ ] [Redis---List数据类型操作](https://developer.aliyun.com/article/71365)
 2. [ ] [Redis-哈希(Hash)的相关操作](https://cloud.tencent.com/developer/article/1813851)
 3. [ ] [【Redis】五大常见的数据类型之 Zset](https://developer.aliyun.com/article/1053766)
-4. [] [Redis命令介绍之Geo类型（地理空间）操作命令](https://www.ghosind.com/2020/10/20/redis-geo)
+4. [ ] [Redis命令介绍之Geo类型（地理空间）操作命令](https://www.ghosind.com/2020/10/20/redis-geo)
 
 
 
