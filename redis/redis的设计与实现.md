@@ -165,11 +165,19 @@ georadius 支持5个参数:
 #### 19. hyperlonglong 的使用场景？ (3_2023_11_13)
 较小的内存，求大量数据不同的个数
 
-#### 20. bitmap支持哪些常用操作？(2_2023_11_3)
+#### 20. bitmap支持哪些常用操作？(2_2023_11_13)
 |  操作         | 命令   | 例子                                         | 说明                             | 时间复杂度 |
 |  ----        | ----   | ----                                        | ----                            | ----      |
 | setbit       |        | setbit key offset val                      | 添加数据                          |           |
-| setbit       |        | setbit key offset val                      | 添加数据                          |           |  
+| getbit       |        | getbit key offset                          | 获取数据                          |           |  
+| bitcount     |        | bitcount key [start, end]                  | 1的个数                           |           |  
+| bitpos       |        | bitpos key bit [start, end]                | 从左往右，第一个0/1的偏移量          |           |  
+| bitop        |        | bitop  key op key1 key2                    | 对key做逻辑运算操作 AND/OR/NOT      |           |  
+| bitfield     |        | bitfield  [GET type offset] [SET type offset value] [INCRBY type offset increment] [OVERFLOW WRAP|SAT|FAIL]                    | 对key做逻辑运算操作 AND/OR/NOT      | 把bitmap当成一个整数数组处理          |  
+
+#### 21. bitmap的使用场景？(2_2023_11_13)
+统计是或否的场景都能用bitmap，布隆过滤器,签到,日活
+
 
 
 #### 参考资料:
