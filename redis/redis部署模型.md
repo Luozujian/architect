@@ -73,12 +73,15 @@ AOF (append only file)，在redis执行完写命令之后，按照一定的策�
 #### 11. AOF刷新磁盘的策略？ (2_2023_11_13)
 三种策略：
 appendfsync always: 每次都刷新到磁盘
+
 appendfsync everysec: 每s刷新一次，默认配置
+
 appendfsync no: 不主动同步磁盘，由操作系统决定何时同步
 
+#### 12. AOF什么时候会重写？  (2_2023_11_13)
+当AOF文件大于指定大小的时候，就会执行重写，读取内存中的所有键值对，然后用一条命令记录到AOF文件中，然后用新文件替换旧文件，完成重写。
 
-
-
+#### 13. 
 
 
 save 900 1  当时间到900秒时，如果至少有1个key发生变化，就会自动触发bgsave命令创建快照
@@ -89,3 +92,4 @@ save 60 10000    当时间到60秒时，如果至少有10000个key发生变化�
 
 参考资料:
 1. [ ] [Redis持久化机制：RDB和AOF](https://juejin.cn/post/6844903939339452430)
+2. [ ] [AOF 持久化是怎么实现的](https://www.xiaolincoding.com/redis/storage/aof.html#%E6%80%BB%E7%BB%93)
