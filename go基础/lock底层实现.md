@@ -108,7 +108,7 @@ if old&(mutexLocked|mutexStarving) == mutexLocked && runtime_canSpin(iter) {
 }
 ```
 
-#### 1.11 unlock的大概逻辑？(4_2023_10_23)
+#### 1.11 unlock的大概逻辑？(5_2023_11_21)
 1. 直接将锁lock标志位清零
 2. 然后判断是否是饥饿模式
 3. 饥饿模式 => 释放信号量，唤醒队首Goroutine
