@@ -3,7 +3,7 @@
 lock的粒度太粗了，并发操作，读读并不会出现并发问题，只有读写，写写才会出现并发问题，所以为了进一步优化锁的性能，官方推出了读写锁，在读多写少下，可进一步提升并发性能。
 
 
-#### 2. rwlock底层实现数据结构？ (4_2023_10_24)
+#### 2. rwlock底层实现数据结构？ (5_2023_11_22)
 ```c++
 type RWMutex struct {
 	w           Mutex        // held if there are pending writers
@@ -20,32 +20,32 @@ type RWMutex struct {
 5. readerWait 读等待的个数
 ```
 
-#### 3. lock方法的大概逻辑？ (4_2023_10_24)
+#### 3. lock方法的大概逻辑？ (5_2023_11_22)
 1. 加互斥锁
 2. 将readerCount设置成一个非常小的负数
 3. 如果此时有正在写的goroutine，则修改readerWaiter的值，为正在当前正在写的goroutine数量，然后阻塞
 4. 否则直接成功 
 
 
-#### 4. unlock方法的大概逻辑？（4_2023_10_24）
+#### 4. unlock方法的大概逻辑？（5_2023_11_22）
 1. 修改readerCount
 2. 根据当前readerCount的数量释放信号量
 3. 释放互斥锁
 
 
-#### 5. rlock方法的大概逻辑？(4_2023_10_24)
+#### 5. rlock方法的大概逻辑？(5_2023_11_22)
 1. 修改readerCount的值
 2. 如果readerCount的值小于，则代表有正在执行的写goroutine，加入到阻塞队列
 3. 否则成功
 
 
-#### 6. runlock方法的大概逻辑? (4_2023_10_24)
+#### 6. runlock方法的大概逻辑? (5_2023_11_22)
 1. 修改readCount的值
 2. 如果readerCount的值小于0，则修改readerWait的值
 3. 如果readerWait -1 == 0的话，则唤醒阻塞的写goroutine
 
 
-#### 7. write lock在判断是否还有未完成的读协程时为什么不直接使用r!=0 ？ (4_2023_10_24)
+#### 7. write lock在判断是否还有未完成的读协程时为什么不直接使用r!=0 ？ (5_2023_11_22)
 ```c++
 r := rw.readerCount.Add(-rwmutexMaxReaders) + rwmutexMaxReaders
 // Wait for active readers.
@@ -61,7 +61,7 @@ if r != 0 && rw.readerWait.Add(r) != 0 {
 
 
 
-#### 8. 读写锁的优缺点？ (3_2023_10_17)
+#### 8. 读写锁的优缺点？ (4_2023_11_22)
 优点: 
 1. 适用于读多写少的场景，读次数/写次数越大，效率相比互斥锁提升越高，当值为1000的时候，benckmack实验显示性能提升95%
 
