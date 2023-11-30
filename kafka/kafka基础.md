@@ -41,7 +41,7 @@ kafka实现的是拉取模式，客户端实现一个长轮询
 2. 如果指定了key，则对key做个HASH，然后对partition数量取余
 3. 如果啥都没指定，则在第一次发送数据的时候生成的随机数，然后对partition数量取模，后续每次+1，其实就是轮询
 
-#### 10. 如何保证producer发送数据的可靠性？ (2_2023_11_30)
+#### 10. 如何保证producer发送数据的可靠性？   (2_2023_11_30)
 ack机制，向partition发送数据，partition收到数据之后，并且根据策略同步给flower节点之后，返回ack确认，客户端收到ack确认后，可继续发送
 
 #### 11. 什么是ISR？ (2_2023_11_30)
@@ -64,7 +64,41 @@ ack机制，向partition发送数据，partition收到数据之后，并且根�
 1: brocker leader partition落库后就返回，如果leader partition对应的brocker挂掉之后，就会出现数据丢失
 -1: leader同步数据给所有flower后才返回ack，也可能存在数据丢失的情况
 
-#### 16.   
+#### 16. 什么是LEO、HW？(2_2023_11_30)
+LEO: log end offset，每个副本最后一个offset
+HW:  高水位，最小的LEO
+
+消费数据的一致性: 只有HW前面的数据才是对消费者可见的，用于保证消费的一致性
+副本数据一致性: flower当选leader后，会把hw之外的数据全都丢掉，保证副本数据的一致性
+
+#### 17. 什么是exactly once的语义？(2_2023_11_30)
+当策略设置成-1的时候，基本上可以保证不丢失数据，实现了at least once的语义，当策略设置成0的时候，基本实现了at most once的语义，即最多一次。
+at least once + 幂等就实现了 = exactly once的语义
+
+#### 18. kafka是如何支持幂等性的呢？(2_2023_11_30)
+producer在初始化的时候会被分配一个PID,发往partition的消息可附带一个三元组<PID,Partition,SeqNumber>作为主键，相同主键kafka只会持久化一条，幂等性不可跨
+分区，不可跨回话，因为kafka重启pid会变化。
+
+#### 19. 消费者分区策略有哪些？(2_2023_11_30)
+range: 针对单个topic,消费者个数均分，第一个消费者可能会多
+roundRobin: 针对所有topic，把所有partition排序，消费者排序，然后轮询分配
+
+![image](https://github.com/Luozujian/architect/assets/27532970/6fe97e60-082a-4aa2-9d0c-84ab7d6a2088)
+![image](https://github.com/Luozujian/architect/assets/27532970/753023fa-78ad-418e-a063-b1a810eca68b)
+
+
+
+#### 20. 如何保证消费者正确消费了数据？(2_2023_11_30)
+手动发送ack，不要自动ack即可
+
+
+#### 21. 
+
+
+
+
+![image](https://github.com/Luozujian/architect/assets/27532970/011e6a7c-0b9d-4128-b9a5-bdce18f182f4)
+
 
 
 
