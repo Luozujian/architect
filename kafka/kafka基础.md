@@ -12,11 +12,17 @@ kafka是一个分布式的基于发布/订阅分布式消息队列，常用用�
 
 #### 3. kafka 核心概念？ (3_2023_12_1)
 producer: 消息生成者
+
 consumer: 消费者
+
 broker: 起kafka的进程
+
 topic: 主题，消息分类
+
 partition: 分区，用于提升topic的负载能力
+
 leader: 针对分区的leader, 还有follow
+
 消费者组: 一个分区只能被一个消费者组中的一个消费者消费
 
 #### 4. topic的数据是存储在磁盘还是内存？ (3_2023_12_4)
