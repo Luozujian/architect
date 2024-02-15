@@ -112,6 +112,7 @@ roundRobin: 针对所有topic，把所有partition排序，消费者排序，然
 
 参考资料:
 1. [ ] [kafka消费者那些事儿](https://baijiahao.baidu.com/s?id=1767477534734641183&wfr=spider&for=pc)
+2. [ ] [kafka选举](https://www.cnblogs.com/jing99/p/13870593.html)
 
 
 
