@@ -1,4 +1,13 @@
 ### golang并发编程基础
+
+#### 1. golang那些数据是并发安全的？
+
+
+
+
+参考资料:
+https://blog.csdn.net/m0_51014498/article/details/135856846
+
 #### 1. 什么是sync.Cond？ (5_2023_11_22)
 sync.cond是golang用来协调多个goroutine的重要手段之一，常用于当某个条件发生的时候，通知多个goroutine
 
