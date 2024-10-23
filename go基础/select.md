@@ -9,7 +9,7 @@ go select与linux操作系统的select类似，为golang提供了一种IO多路�
 
 
 #### 3. select中的case底层结构体是啥？  (2_20241022)
-c为case对应的channel
+select在Go的源代码中并不存在对应的结构体，用runtime.scase表示select控制结构中的case，c为case对应的channel，elem指向case对应的代码
 ```
 type scase struct {
 	c    *hchan         // chan
@@ -39,6 +39,7 @@ select在编译期间会被转换成oselect节点。每个oselect节点持有一
 2. 将当前goroutine加入到对应channel的sendq或者recevq队列当中，等待被其他goroutine唤醒
 3. 被其他goroutine唤醒后找到满足条件的channel执行case，同时将当前goroutine从其他channel的等待队列中出队
 
+通过对比sg结构在sg链表中的位置确认是第几个scase
 
 #### 8. select 底层实现原理？  (2_20241022)
 golang select是一种应用于channel的IO多路复用支持，其具备两个特点，支持非阻塞接收发送channel，多个channel就绪随机选择就绪的channel执行其相关case，保证公平性。
