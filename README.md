@@ -1,4 +1,8 @@
 # architect
+## 复习顺序
+#### [1.go语言基础](https://github.com/Luozujian/architect/blob/master/go%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80.md)
+#### [2.]
+
 
 
 
