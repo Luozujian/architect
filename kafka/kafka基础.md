@@ -62,7 +62,7 @@ ack机制，向partition发送数据，partition收到数据之后，并且根�
 1. leader和flower数据同步完成之后，再返回ack，延迟高，最多允许n - 1个节点故障
 2. leader和半数节点同步完数据之后，再返回ack，延迟低，最多允许 n/2 - 1个节点故障，就至少要保证有一台flower拿到数据
 
-kafka用的是第二种方案
+kafka用的是第1种方案
 
 #### 14. 加入到ISR的条件？  (3_2023_12_04)
 1. flower如果10s没有和leader进行数据传递，则踢出ISR
